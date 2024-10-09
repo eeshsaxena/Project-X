@@ -1,86 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project X</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="navbar">
-      <a href="#home" id="home-link">Home</a>
-      <a href="./about.html">About</a>
-      <a href="#blog" id="blog-link">Blog</a>
-      <a href="#contact" id="contact-link">Contact</a>
+        <a href="#home" id="home-link">Home</a>
+        <a href="./about.html">About</a>
+        <a href="#blog" id="blog-link">Blog</a>
+        <a href="#contact" id="contact-link">Contact</a>
     </div>
     <div class="header" id="home">
-      <h1>Project X</h1>
-      <p>Your gateway to thoughts and tales.</p>
+        <h1>Project X</h1>
+        <p>Your gateway to thoughts and tales.</p>
     </div>
     <div class="main-content" id="blog">
-      <div class="content">
-        <img src="image1.jpg" alt="Description of image 1" />
-        <div>
-          <h2>Latest Post 1</h2>
-          <p>Discover new perspectives in my latest blog post...</p>
-          <h3>About This Post</h3>
-          <p>In this post, I delve into...</p>
-        </div>
-      </div>
-      <div class="content">
-        <img src="image2.jpg" alt="Description of image 2" />
-        <div>
-          <h2>Latest Post 2</h2>
-          <p>Join me as I explore fascinating topics...</p>
-          <h3>About This Post</h3>
-          <p>This article discusses...</p>
-        </div>
-      </div>
-      <div class="content">
-        <img src="image3.jpg" alt="Description of image 3" />
-        <div>
-          <h2>Latest Post 3</h2>
-          <p>Insights and reflections from my recent experiences...</p>
-          <h3>About This Post</h3>
-          <p>Here, I share...</p>
-        </div>
-      </div>
-      <div class="content">
-        <img src="image4.jpg" alt="Description of image 4" />
-        <div>
-          <h2>Latest Post 4</h2>
-          <p>Engaging stories that inspire and entertain...</p>
-          <h3>About This Post</h3>
-          <p>This piece focuses on...</p>
-        </div>
-      </div>
-      <div class="content">
-        <img src="image4.jpg" alt="Description of image 4" />
-        <div>
-          <h2>Latest Post 4</h2>
-          <p>Engaging stories that inspire and entertain...</p>
-          <h3>About This Post</h3>
-          <p>This piece focuses on...</p>
-        </div>
-      </div>
+        <h1>Submit a Post</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username">
+        <br>
+
+        <label for="post">Post:</label>
+        <textarea id="post" placeholder="Write your post here"></textarea>
+        <br>
+
+        <button id="submit-button">Submit Post</button>
+        <br>
+        <br>
+
+        <div id="message"></div>
+        <div id="dynamic-posts"></div>
     </div>
     <div id="contact">
-      <div
-        class="visme_d"
-        data-title="Contact Form"
-        data-url="4d6yepek-contact-form"
-        data-domain="forms"
-        data-full-page="false"
-        data-min-height="500px"
-        data-form-id="96782"
-      ></div>
-      <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+        <div
+            class="visme_d"
+            data-title="Contact Form"
+            data-url="4d6yepek-contact-form"
+            data-domain="forms"
+            data-full-page="false"
+            data-min-height="500px"
+            data-form-id="96782"
+        ></div>
+        <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
     </div>
     <div class="footer">
-      <p>&copy; 2024 Whimsical Writings</p>
+        <p>&copy; 2024 Whimsical Writings</p>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <script>
+        // Use createClient directly, no need to reference `supabase`
+        const { createClient } = window.supabase;
+
+        // Initialize Supabase client
+        const supabaseUrl = 'https://vnocafpapicxqsvgzpfy.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZub2NhZnBhcGljeHFzdmd6cGZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg0OTAzMzksImV4cCI6MjA0NDA2NjMzOX0.Y2wnLty1ldL2ZMCDsaEYS5lNaOmCb-Ep1x8Uqg0pBZQ';
+        const supabase = createClient(supabaseUrl, supabaseKey);
+
+        async function submitPost() {
+            const username = document.getElementById('username').value;
+            const post = document.getElementById('post').value;
+
+            // Check if inputs are filled
+            if (!username || !post) {
+                document.getElementById('message').textContent = 'Both fields are required!';
+                return;
+            }
+
+            // Insert the data into the table
+            const { data, error } = await supabase
+                .from('Project X')
+                .insert([{ username: username, post: post }]);
+
+            // Handle the response
+            if (error) {
+                console.error('Error inserting data:', error);
+                document.getElementById('message').textContent = 'Failed to submit post!';
+            } else {
+                console.log('Post inserted:', data);
+                document.getElementById('message').textContent = 'Post submitted successfully!';
+                document.getElementById('username').value = '';
+                document.getElementById('post').value = '';
+                loadPosts(); // Refresh posts after submission
+            }
+        }
+
+        // Fetch 4 random posts from the database and display them
+        async function loadPosts() {
+            const { data, error } = await supabase
+                .from('Project X')
+                .select('username, post')
+                .limit(4)
+                .order('created_at', { ascending: false });
+
+            if (error) {
+                console.error('Error fetching posts:', error);
+                return;
+            }
+
+            // Target the dynamic-posts div
+            const postsContainer = document.getElementById('dynamic-posts');
+            postsContainer.innerHTML = ''; // Clear previous content
+
+            // Iterate over the posts and create the HTML structure
+            data.forEach((entry, index) => {
+                const postDiv = document.createElement('div');
+                postDiv.className = 'content';
+                postDiv.innerHTML = `
+                    <div>
+                        <h3>Post ${index + 1}</h3>
+                        <p>${entry.post}</p>
+                        <h3>Posted by</h3>
+                        <p>${entry.username}</p>
+                    </div>
+                `;
+                postsContainer.appendChild(postDiv);
+            });
+        }
+
+        // Load the posts when the page loads
+        document.addEventListener('DOMContentLoaded', loadPosts);
+
+        // Attach the submitPost function to the button
+        document.getElementById('submit-button').addEventListener('click', submitPost);
+    </script>
+</body>
 </html>
+
