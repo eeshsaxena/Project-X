@@ -16,8 +16,9 @@ body {
 .navbar {
   width: 100vw;
   padding: 40px;
+  margin-left: -50px;
   font-family: bruno ace sc;
-  font-size: 40px;
+  font-size: 30px;
   display: flex;
   justify-content: center;
   background-color: #000000;
