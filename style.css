@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&family=Josefin+Sans:wght@100;400;700&family=Nova+Square&family=Uncial+Antiqua&family=Bruno+Ace+SC&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
@@ -6,7 +8,7 @@ body {
   font-family: "Georgia", serif;
   margin: 0;
   padding: 0;
-  background-color: #000000;
+  background: linear-gradient(135deg, rgb(0, 0, 0), rgb(71, 67, 67));
   color: #000000;
   transition: background-color 0.5s ease;
 }
@@ -14,6 +16,7 @@ body {
 .navbar {
   width: 100vw;
   padding: 40px;
+  font-family: bruno ace sc;
   font-size: 40px;
   display: flex;
   justify-content: center;
@@ -33,12 +36,14 @@ body {
   text-decoration: none;
   transition: background-color 0.3s, transform 0.2s;
   font-weight: bold;
+  border-radius: 20%;
 }
 
 .navbar a:hover {
-  background-color: #ddd;
+  background-color: #938f8f;
   color: black;
   transform: scale(1.05);
+  border-radius: 20%;
 }
 
 @media (max-width: 350px) {
@@ -48,10 +53,11 @@ body {
 }
 
 .header {
+  font-family: bruno ace sc;
   margin-top: -50px;
   text-align: center;
   padding: 60px;
-  background: linear-gradient(135deg, #000000, #000000);
+  background: linear-gradient(135deg, rgb(71, 67, 67), rgb(0, 0, 0));
   color: white;
   animation: fadeIn 1s ease;
 }
@@ -69,6 +75,7 @@ body {
 }
 
 .main-content {
+  font-family: poppins;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,11 +94,13 @@ body {
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
   margin-bottom: 20px;
+  box-shadow: 0 6px 20px rgba(3, 5, 6, 9);
 }
 
 .content:hover {
   transform: translateY(-7px);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(3, 5, 6, 9);
+  transform: scale(1.2);
 }
 
 .content img {
@@ -103,7 +112,7 @@ body {
 #contact {
   padding: 40px;
   text-align: center;
-  background: black;
+  background: linear-gradient(135deg, rgb(71, 67, 67), rgb(0, 0, 0));
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   margin: 70px;
@@ -151,10 +160,13 @@ body {
     text-align: center;
     max-width: 500px;
     margin: auto;
+    font-family: bruno ace sc;
+    text-shadow: 0 5px 10px #0004;
 }
 
 .about img{
     border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(6, 4, 6, 12);
 }
 
 .image-container {
@@ -193,4 +205,3 @@ body {
   .image-container:hover .social-icons {
     opacity: 1;
   }
-  
