@@ -13,6 +13,8 @@ body {
 
 .navbar {
   width: 100vw;
+  padding: 40px;
+  font-size: 40px;
   display: flex;
   justify-content: center;
   background-color: #000000;
@@ -46,6 +48,7 @@ body {
 }
 
 .header {
+  margin-top: -50px;
   text-align: center;
   padding: 60px;
   background: linear-gradient(135deg, #000000, #000000);
