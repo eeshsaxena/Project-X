@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="bg-gray-800 text-white">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold">My Portfolio</a>
+            <div>
+                <a href="#about" class="mx-3 hover:text-gray-300">About</a>
+                <a href="#skills" class="mx-3 hover:text-gray-300">Skills</a>
+                <a href="#projects" class="mx-3 hover:text-gray-300">Projects</a>
+                <a href="#contact" class="mx-3 hover:text-gray-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="bg-gray-100 py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold mb-2">Welcome to My Portfolio</h1>
+                <p class="text-xl mb-8">I'm a passionate developer creating amazing web experiences</p>
+                <a href="#contact" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Get in touch</a>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
+                <p class="text-xl text-center max-w-2xl mx-auto">I'm a skilled web developer with experience in creating responsive and user-friendly websites. I love turning ideas into reality through code.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="bg-gray-100 py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center">My Skills</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded shadow">HTML</div>
+                    <div class="bg-white p-4 rounded shadow">CSS</div>
+                    <div class="bg-white p-4 rounded shadow">JavaScript</div>
+                    <div class="bg-white p-4 rounded shadow">React</div>
+                    <div class="bg-white p-4 rounded shadow">Node.js</div>
+                    <div class="bg-white p-4 rounded shadow">Python</div>
+                    <div class="bg-white p-4 rounded shadow">Git</div>
+                    <div class="bg-white p-4 rounded shadow">Responsive Design</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded shadow overflow-hidden">
+                        <img src="project1.jpg" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2">Project 1</h3>
+                            <p class="text-gray-700">Description of Project 1</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded shadow overflow-hidden">
+                        <img src="project2.jpg" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2">Project 2</h3>
+                            <p class="text-gray-700">Description of Project 2</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded shadow overflow-hidden">
+                        <img src="project3.jpg" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2">Project 3</h3>
+                            <p class="text-gray-700">Description of Project 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-gray-100 py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center">Contact Me</h2>
+                <form class="max-w-lg mx-auto">
+                    <div class="mb-4">
+                        <label for="name" class="block mb-2">Name</label>
+                        <input type="text" id="name" class="w-full p-2 border rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block mb-2">Email</label>
+                        <input type="email" id="email" class="w-full p-2 border rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block mb-2">Message</label>
+                        <textarea id="message" class="w-full p-2 border rounded" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
