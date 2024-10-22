@@ -1,86 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project X</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="bg-gray-800 text-white">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold">My Portfolio</a>
+            <div>
+                <a href="#about" class="mx-3 hover:text-gray-300">About</a>
+                <a href="#skills" class="mx-3 hover:text-gray-300">Skills</a>
+                <a href="#projects" class="mx-3 hover:text-gray-300">Projects</a>
+                <a href="#contact" class="mx-3 hover:text-gray-300">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-  <body>
-    <div class="navbar">
-      <a href="#home" id="home-link">Home</a>
-      <a href="./about.html">About</a>
-      <a href="#blog" id="blog-link">Blog</a>
-      <a href="#contact" id="contact-link">Contact</a>
-    </div>
-    <div class="header" id="home">
-      <h1>Project X</h1>
-      <p>Your gateway to thoughts and tales.</p>
-    </div>
-    <div class="main-content" id="blog">
-      <div class="content">
-        <img src="image1.jpg" alt="Description of image 1" />
-        <div>
-          <h2>Latest Post 1</h2>
-          <p>Discover new perspectives in my latest blog post...</p>
-          <h3>About This Post</h3>
-          <p>In this post, I delve into...</p>
+    <main>
+        <section id="hero" class="bg-gray-100 py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold mb-2">Welcome to My Portfolio</h1>
+                <p class="text-xl mb-8">I'm a passionate developer creating amazing web experiences</p>
+                <a href="#contact" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Get in touch</a>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
+                <p class="text-xl text-center max-w-2xl mx-auto">I'm a skilled web developer with experience in creating responsive and user-friendly websites. I love turning ideas into reality through code.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="bg-gray-100 py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center">My Skills</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded shadow">HTML</div>
+                    <div class="bg-white p-4 rounded shadow">CSS</div>
+                    <div class="bg-white p-4 rounded shadow">JavaScript</div>
+                    <div class="bg-white p-4 rounded shadow">React</div>
+                    <div class="bg-white p-4 rounded shadow">Node.js</div>
+                    <div class="bg-white p-4 rounded shadow">Python</div>
+                    <div class="bg-white p-4 rounded shadow">Git</div>
+                    <div class="bg-white p-4 rounded shadow">Responsive Design</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 " >
+                    <div class="bg-white rounded shadow overflow-hidden">
+                        <img src="project1.jpg" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2">Project 1</h3>
+                            <p class="text-gray-700">Description of Project 1</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded shadow overflow-hidden">
+                        <img src="project2.jpg" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2">Project 2</h3>
+                            <p class="text-gray-700">Description of Project 2</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded shadow overflow-hidden">
+                        <img src="project3.jpg" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2">Project 3</h3>
+                            <p class="text-gray-700">Description of Project 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-gray-100 py-20">
+            <div class="container mx-auto px-6">
+              <div
+                  class="visme_d"
+                  data-title="Contact Form"
+                  data-url="4d6yepek-contact-form"
+                  data-domain="forms"
+                  data-full-page="false"
+                  data-min-height="500px"
+                  data-form-id="96782"
+                ></div>
+                <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2023 My Portfolio. All rights reserved.</p>
         </div>
-      </div>
-      <div class="content">
-        <img src="image2.jpg" alt="Description of image 2" />
-        <div>
-          <h2>Latest Post 2</h2>
-          <p>Join me as I explore fascinating topics...</p>
-          <h3>About This Post</h3>
-          <p>This article discusses...</p>
-        </div>
-      </div>
-      <div class="content">
-        <img src="image3.jpg" alt="Description of image 3" />
-        <div>
-          <h2>Latest Post 3</h2>
-          <p>Insights and reflections from my recent experiences...</p>
-          <h3>About This Post</h3>
-          <p>Here, I share...</p>
-        </div>
-      </div>
-      <div class="content">
-        <img src="image4.jpg" alt="Description of image 4" />
-        <div>
-          <h2>Latest Post 4</h2>
-          <p>Engaging stories that inspire and entertain...</p>
-          <h3>About This Post</h3>
-          <p>This piece focuses on...</p>
-        </div>
-      </div>
-      <div class="content">
-        <img src="image4.jpg" alt="Description of image 4" />
-        <div>
-          <h2>Latest Post 4</h2>
-          <p>Engaging stories that inspire and entertain...</p>
-          <h3>About This Post</h3>
-          <p>This piece focuses on...</p>
-        </div>
-      </div>
-    </div>
-    <div id="contact">
-      <div
-        class="visme_d"
-        data-title="Contact Form"
-        data-url="4d6yepek-contact-form"
-        data-domain="forms"
-        data-full-page="false"
-        data-min-height="500px"
-        data-form-id="96782"
-      ></div>
-      <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
-    </div>
-    <div class="footer">
-      <p>&copy; 2024 Whimsical Writings</p>
-    </div>
+    </footer>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
