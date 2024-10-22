@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&family=Josefin+Sans:wght@100;400;700&family=Nova+Square&family=Uncial+Antiqua&family=Bruno+Ace+SC&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&family=Josefin+Sans:wght@100;400;700&family=Nova+Square&family=Uncial+Antiqua&family=Bruno+Ace+SC&display=swap'); */
 
 html {
   scroll-behavior: smooth;
@@ -8,7 +8,7 @@ body {
   font-family: "Georgia", serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, rgb(0, 0, 0), rgb(71, 67, 67));
+  /* background: linear-gradient(135deg, rgb(0, 0, 0), rgb(71, 67, 67)); */
   color: #000000;
   transition: background-color 0.5s ease;
 }
@@ -98,7 +98,7 @@ body {
   box-shadow: 0 6px 20px rgba(3, 5, 6, 9);
 }
 
-.content:hover {
+.contents:hover {
   transform: translateY(-7px);
   box-shadow: 0 6px 20px rgba(3, 5, 6, 9);
   transform: scale(1.2);
